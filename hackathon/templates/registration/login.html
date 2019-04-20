@@ -1,0 +1,12 @@
+{%extends 'home/base.html' %}
+
+{% block title%}Login{% endblock %}
+<h1>Interest_dot_Meet</h1>
+<h2>login</h2>
+{%block content %}
+<form method="post">
+  {%csrf_token%}
+  {{form.as_p}}
+  <button type="submit">Login</button>
+</form>
+{%endblock%}

@@ -1,0 +1,16 @@
+<html>
+	<body>
+		{{current_post.body}}
+		{{current_post.Author}}
+		{{current_post.posted}}
+		{% for comment in cts %}
+		{{comment.cbody}}
+		{%endfor%}
+		<form method="post">
+	{% csrf_token %}
+	{{ forms.as_p }}
+	<button type="submit">Post</button>
+  </form>
+
+	</body>
+</html>

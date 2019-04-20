@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>InterestDotMeet</title>
+<!--static folder inside every app should have a folder inside it with app name(maekes easy to locate from which app this style sheet is called) reason to have folder is since static root track asked file from each app in alphabatic order so if to static file have same path after static folder that file from other app may come which might not be your need so better to have a good organisation-->
+</head>
+<body>
+  <header>
+	<h1>InterestDotMeet</h1>
+	{% if user.is_authenticated %}
+	  You are signed in as <strong>{{ user.username }}</strong> /
+
+	  <a href="{% url 'logout'%}?next=accounts/">logout</a>
+	{% endif %}
+	<hr>
+  </header>
+  <main>
+<form method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Post</button>
+  </form>
+  </main>
+</body>
+</html>
